@@ -19,4 +19,7 @@ int main() {
     printf("=> Sexe : %s\n", sexe);
     printf("=> email : %s\n", email);
     return 0;
+
+    
+    
 }
