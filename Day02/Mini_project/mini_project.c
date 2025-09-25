@@ -4,7 +4,7 @@
 int main() {
     char Titre[10][50], Auteur[10][50]; float prix[10] ;int  quantité[10], q = 0 ,i = 0, n = 0 , ex = 1 , n_v ;
     do {
-        hi :
+       
         printf("\n\n == Système de Gestion de Stock dans une Librairie ==\n\n");
         printf("1. Ajouter un livre au stock\n");
         printf("2. Afficher Tous les Livres Disponibles\n");
