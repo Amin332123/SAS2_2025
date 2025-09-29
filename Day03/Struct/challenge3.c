@@ -3,15 +3,20 @@ typedef struct {
     int longeur ;
     int largeur ;
 } Laire ; 
-void a(int *x , int *y) {
-    printf("l\'aire : %d", *x * *y);
+int a(Laire *s) {
+    return s->longeur * s->largeur;
+    
+
 }
 int main() {
-    Laire s1;
+    Laire s;
     printf("lon : ");
-    scanf("%d", &s1.longeur);
+    scanf("%d", &s.longeur);
     printf("lar : ");
-    scanf("%d", &s1.largeur);
-    a(&s1.longeur , &s1.largeur);
+    scanf("%d", &s.largeur);
+    Laire *pts = &s;
+    
+    printf("L\'aire : %d", a(pts));
+
     return 0;
 }
