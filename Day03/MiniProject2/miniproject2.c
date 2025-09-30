@@ -199,6 +199,8 @@
         }
     }
     int main() {
+
+        
         int choix;
         while (1) {
          
@@ -214,6 +216,8 @@
             
         }
      
+
+
         switch (choix) {
         case 1 : ajouter(); break;
         case 2 : modifier(); break;
