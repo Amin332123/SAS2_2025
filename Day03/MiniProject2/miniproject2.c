@@ -3,7 +3,7 @@
     #define maxcontact 100
     typedef struct {
         char nom[50];
-        char tell[10];
+        char tell[11];
         char email[50];
     } contact;
     contact c[maxcontact];
@@ -18,10 +18,13 @@
         printf("6. Quitter le programme \n");
     }
     void ajouter() {
-        int z;
+        
         printf("=> Entrer le nom : ");
         scanf(" %[^\n]", c[nb_de_contact].nom);
-        for (int i = 0 ; i < nb_de_contact ; i++)
+        // i created this code bellow for anyone does not want to have same acount name .
+        // int z;
+
+        /* for (int i = 0 ; i < nb_de_contact ; i++)
         {
             if ( strcmp(c[i].nom , c[nb_de_contact].nom) == 0) 
             {
@@ -35,14 +38,14 @@
                    for (int i = 0 ; i < nb_de_contact ; i++)
                    {
                        if (strcmp(c[i].nom , c[nb_de_contact].nom) == 0) {
-                           z = i;
-                       } else {
-                           goto here ;
-                       }
-                   }   
+                //           z = i;
+                //       } else {
+                //           goto here ;
+                //       }
+                //   }   
                        
-                   if (x == 3 &&  strcmp(c[z].nom , c[nb_de_contact].nom) == 0) 
-                   {
+                //   if (x == 3 &&  strcmp(c[z].nom , c[nb_de_contact].nom) == 0) 
+                //   {
                        return;
                    }
                    
@@ -53,7 +56,7 @@
                 
             }
         }
-        here : 
+        here : */
         printf("=> nombre de telephone : ");
         scanf(" %[^\n]", c[nb_de_contact].tell);
         if (strlen(c[nb_de_contact].tell) != 10 )
@@ -66,6 +69,12 @@
             {
                 if (c[nb_de_contact].tell[i] >= 48 && c[nb_de_contact].tell[i] <= 57) 
                 {
+                    if (c[nb_de_contact].tell[0] == 48 && c[nb_de_contact].tell[1] == 53 || c[nb_de_contact].tell[1] == 54 || c[nb_de_contact].tell[1] == 55) {
+                        
+                    } else {
+                        printf("\nNvous devez commencer vos deux premiers numéros par 06 ou 05\n");
+                        return;
+                    }
                     
                 } else {
                     printf("\nInvalide , tu dois écrire ***** 10 nombres ******\n");
@@ -75,8 +84,18 @@
             }
         }
         
+        
+        
         printf("=> email : ");
         scanf(" %[^\n]", c[nb_de_contact].email);
+        char *p = strstr(c[nb_de_contact].email, "@" );
+        char *r = strstr(c[nb_de_contact].email, "." );
+        if (p && r) {
+            
+        } else {
+            printf("\nErreur, l'email est incorrect\n");
+            return;
+        }
         nb_de_contact++;
         printf("Contact ajouté avec succès \n");
     }
