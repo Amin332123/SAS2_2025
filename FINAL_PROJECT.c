@@ -115,54 +115,16 @@ void  Ajouter() {
     switch (choix) {
         case '1' :
             // nom
-            Name : 
-            int count = 0 ;
+            
             printf("\nEntrer le nom : ");
             scanf(" %[^\n]", A[nb_animal].nom);
-            int stock = strlen(A[nb_animal].nom);
-            // i created this code bax n check name wax correct or no
-            for (int i = 0 ; i < stock  ; i++)
-            {
-                if (isalpha(A[nb_animal].nom[i]))
-                {
-                    count++;
-                }
-                
-            }
-            if (count != stock)
-            {
-                printf("Ecrtie une valide nom\n");
-                goto Name;
-            }
-            
-            
-            
-            
+
             
             
             // espece 
-            Espece :
-            int counte = 0;
+            
             printf("Entrer le espèce : ");
             scanf(" %[^\n]", A[nb_animal].espece);
-            
-            int stocke = strlen(A[nb_animal].espece);
-            
-            for (int i = 0 ; i < stocke  ; i++)
-            {
-                if (isalpha(A[nb_animal].espece[i]))
-                {
-                    counte++;
-                }
-                
-            }
-            if (counte != stocke)
-            {
-                printf("Ecrtie un valide espèce\n");
-                goto Espece;
-            }
-            
-            
             
             
             
@@ -172,27 +134,10 @@ void  Ajouter() {
             
             
             // Habitat
-            Habitat : 
-            int counth = 0;
+            
             printf("Entrer le habitat : ");
             scanf(" %[^\n]",  A[nb_animal].habit);
-            int stockh =  strlen(A[nb_animal].habit);
-            for (int i = 0 ; i < stockh ; i++)
-            {
-                if (isalpha(A[nb_animal].habit[i]))
-                {
-                    counth++;
-                }
-                
-            }
-            if (counth != stockh)
-            {
-                printf("Ecrtie un valide habitat\n");
-                goto Habitat;
-            }
-
-
-
+            
 
 
             printf("Entrer le poids : ");
@@ -567,7 +512,7 @@ void  Statistiques() {
                    strcpy(alot , A[i].espece);
                }
            }
-           printf("les espèces les plus représentées : %s", alot);
+           printf("le espèce le plu représentées : %s", alot);
            break;
         case '0': 
            break;
@@ -613,6 +558,8 @@ int main() {
                 break;
             case '7' : 
                 return 0;
+            default : 
+               break;
     
         }
         
